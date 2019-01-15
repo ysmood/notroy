@@ -1,0 +1,29 @@
+{
+  "name": "notroy",
+  "version": "1.0.2",
+  "description": "a tool for remote control of webpages",
+  "main": "index.js",
+  "bin": "bin/index.js",
+  "scripts": {
+    "test": "no test",
+    "postpublish": "webpack client.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "index.js"
+  ],
+  "author": "ysmood.org",
+  "license": "ISC",
+  "dependencies": {
+    "nisp": "^0.13.4",
+    "nisper": "^0.8.3",
+    "noflow": "^0.8.11",
+    "nokit": "^0.27.8",
+    "path-to-regexp": "^2.4.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  }
+}
