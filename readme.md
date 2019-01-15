@@ -10,7 +10,9 @@ Inject this script into a page
 ```
 
 The `{id}` should be unique for each page, so that you can control different pages
-independently.
+independently. Anyone who has the id can control the page, so you'd better treat it as
+a password. Multiple pages can share a same id (actually the id is group id, which can be used for broadcast).
+If you left the id empty, a random id will be generated, it will be printed in the console.
 
 
 ### Execute Random Code on Page
