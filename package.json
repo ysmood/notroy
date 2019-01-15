@@ -1,12 +1,12 @@
 {
   "name": "notroy",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "a tool for remote control of webpages",
   "main": "index.js",
   "bin": "bin/index.js",
   "scripts": {
     "test": "no test",
-    "postpublish": "webpack client.js"
+    "prepublish": "webpack client.js"
   },
   "files": [
     "dist",
