@@ -36,6 +36,17 @@ curl https://n.vane.im/{id} -d "navigator.userAgent"
 
 The client will auto-handle promise.
 
+### Remote Assistant
+
+Useful when you want to remote debug some production bug from a customer's page.
+
+Let the user run this in their browser's address bar (for some browsers they will remove the `javascript:` prefix when you paste, you have to type it manually)
+
+```
+javascript:(function(e){e.src='https://n.vane.im/{id}';document.body.appendChild(e)})(document.createElement('script'))
+```
+
+
 ### Live Reload Page
 
 Use it to auto-reload the page
